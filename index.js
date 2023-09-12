@@ -47,3 +47,31 @@ const pizzas = [
     ingredientes: ["Muzzarella", "Tomate", "Anana"],
   },
 ];
+
+// Imprimir en consola:
+
+// a)  Las pizzas que tengan un id impar.
+
+const impar = pizzas.filter((pizza) => pizza.id % 2 === 0)
+// console.log(impar)
+
+// b) Responder: ¿Hay alguna pizza que valga menos de $600?
+
+const lowPrice = pizzas.filter((pizza) => pizza.precio <= 600)
+// console.log(lowPrice)
+
+// c) El nombre de cada pizza con su respectivo precio.
+function nameAndPrice () {
+  const namePrice = pizzas.forEach((pizza) => console.log(`La ${pizza.nombre} tiene un valor de $${pizza.precio}`))
+}
+
+// nameAndPrice()
+
+// d) Todos los ingredientes de cada pizza (En cada iteración imprimir los ingredientes de la pizza que se esta recorriendo). 
+function ingredientes () {
+  const namePrice = pizzas.forEach((pizza) => console.log(`La ${pizza.nombre} tiene ${pizza.ingredientes.join(", ")}`))
+}
+
+// ingredientes()
+
+// Ayuda: van a tener que realizar dos recorridos, ya que cada pizza del array de pizzas tiene una propiedad "ingredientes" cuyo valor es un array con ingredientes.
